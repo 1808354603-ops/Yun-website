@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>杨小琪亚马逊利润与Listing V2综合经营看板（2026.7.1-7.21）</title>
+<style>
+:root{--bg:#f8fafc;--card:#fff;--text:#1e293b;--muted:#64748b;--line:#e2e8f0;--blue:#2563eb;--red:#dc2626;--orange:#ea580c;--green:#16a34a;--purple:#7c3aed;--softred:#fef2f2;--softblue:#eff6ff;--softgreen:#f0fdf4;--softorange:#fff7ed}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC","Microsoft YaHei",Arial,sans-serif;line-height:1.55}.wrap{max-width:1320px;margin:0 auto;padding:24px}.hero{background:linear-gradient(135deg,#fff,#eef6ff);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:16px}h1{font-size:26px;margin:0 0 8px}h2{font-size:18px;margin:0 0 12px}h3{font-size:15px;margin:12px 0 8px}.sub,.note{color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 1px 2px rgba(15,23,42,.04);min-width:0}.kpi .label{font-size:13px;color:var(--muted)}.kpi .value{font-size:28px;font-weight:800;margin:4px 0}.blue{color:var(--blue)}.red{color:var(--red)}.green{color:var(--green)}.orange{color:var(--orange)}.purple{color:var(--purple)}.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}th:first-child,td:first-child{text-align:left}th{background:#f1f5f9;color:#334155}.badge{display:inline-block;border-radius:999px;padding:3px 8px;font-size:12px;font-weight:700}.b-red{background:var(--softred);color:var(--red)}.b-orange{background:var(--softorange);color:var(--orange)}.b-green{background:var(--softgreen);color:var(--green)}.b-blue{background:var(--softblue);color:var(--blue)}.section{margin-top:16px}.callout{border-left:4px solid var(--blue);background:var(--softblue);border-radius:12px;padding:12px 14px;font-size:14px}.warn{border-left-color:var(--orange);background:var(--softorange)}.danger{border-left-color:var(--red);background:var(--softred)}.bars{display:grid;gap:10px}.barrow{display:grid;grid-template-columns:150px 1fr 90px;gap:10px;align-items:center;font-size:13px}.track{height:12px;background:#e5e7eb;border-radius:999px;overflow:hidden}.fill{height:100%;border-radius:999px}.fill.red{background:#ef4444}.fill.orange{background:#f97316}.fill.green{background:#22c55e}.fill.blue{background:#3b82f6}.list{margin:0;padding-left:18px}.list li{margin:6px 0}.mini{font-size:12px;color:var(--muted)}.footer{font-size:12px;color:var(--muted);margin-top:18px}@media(max-width:900px){.grid,.grid2{grid-template-columns:1fr}.wrap{padding:14px}.barrow{grid-template-columns:1fr}h1{font-size:22px}}
+</style>
+<style id="zhcx-detail-table-export-style">
+.zhcx-detail-download-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+}
+.zhcx-detail-download-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #2563eb;
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+.zhcx-detail-download-link svg {
+  width: 15px;
+  height: 15px;
+}
+.zhcx-detail-download-link:hover,
+.zhcx-detail-download-link:focus {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #1d4ed8;
+  outline: none;
+}
+</style></head>
+<body><div class="wrap">
+<div class="hero"><h1>杨小琪亚马逊利润与Listing V2综合经营看板（2026.7.1-7.21）</h1><div class="sub">数据源：订单利润报表V2对应业绩表 + Amazon Listing管理V2 + FBA虚拟库存复核。人员口径：首选业务人员/渠道首选业务人员=杨小琪；利润口径：Profits（二毛）。</div></div>
+
+<div class="callout danger"><b>库存口径已更正：</b>上一版将 Listing V2 同ASIN多条记录的 <code>quality</code> 直接加总，混入了FBM/关联/历史/多MSKU记录，不能代表当前FBA可售库存。本版当前FBA库存改用 <b>FBA虚拟库存表 fulfillable_quantity</b>；例如 B0G158SFX8 当前主MSKU FBA可售为 <b>24</b>，B0CFVTWT73 主MSKU美国仓 FBA可售为 <b>41</b>、预留 <b>6</b>，合计口径为 <b>47</b>。</div>
+
+<div class="grid kpi section">
+ <div class="card"><div class="label">销售额</div><div class="value blue">27.98万</div><div class="note">Incomes 279,795.93</div></div>
+ <div class="card"><div class="label">利润</div><div class="value green">2.26万</div><div class="note">Profits 22,573.88</div></div>
+ <div class="card"><div class="label">利润率</div><div class="value orange">8.07%</div><div class="note">Profits / Incomes</div></div>
+ <div class="card"><div class="label">真实销量 / 订单</div><div class="value purple">3,512 / 2,647</div><div class="note">ProductNum / ClientOrderCount</div></div>
+</div>
+
+<div class="section grid2">
+ <div class="card"><h2>店铺利润表现</h2><div class="bars">
+  <div class="barrow"><span>Amazon-Z01677-US</span><div class="track"><div class="fill green" style="width:100%"></div></div><b>7,667</b></div>
+  <div class="barrow"><span>Amazon-Z01677-AU</span><div class="track"><div class="fill green" style="width:95%"></div></div><b>7,312</b></div>
+  <div class="barrow"><span>Amazon-Z01116-CA</span><div class="track"><div class="fill blue" style="width:41%"></div></div><b>3,154</b></div>
+  <div class="barrow"><span>Amazon-Z01116-US</span><div class="track"><div class="fill orange" style="width:39%"></div></div><b>2,988</b></div>
+  <div class="barrow"><span>Amazon-Z011409-US</span><div class="track"><div class="fill red" style="width:19%"></div></div><b class="red">-1,473</b></div>
+ </div><div class="mini">单位：利润金额；Z011409-US 为最大亏损账号。</div></div>
+ <div class="card"><h2>成本拖累排行</h2><div class="bars">
+  <div class="barrow"><span>FBA运费</span><div class="track"><div class="fill red" style="width:100%"></div></div><b>-96,372</b></div>
+  <div class="barrow"><span>退款</span><div class="track"><div class="fill red" style="width:51%"></div></div><b>-49,393</b></div>
+  <div class="barrow"><span>采购成本</span><div class="track"><div class="fill orange" style="width:43%"></div></div><b>-41,536</b></div>
+  <div class="barrow"><span>交易佣金</span><div class="track"><div class="fill orange" style="width:41%"></div></div><b>-39,151</b></div>
+  <div class="barrow"><span>广告费</span><div class="track"><div class="fill orange" style="width:32%"></div></div><b>-30,503</b></div>
+  <div class="barrow"><span>优惠金额</span><div class="track"><div class="fill orange" style="width:28%"></div></div><b>-27,017</b></div>
+ </div></div>
+</div>
+
+<div class="section card"><h2>正利润但利润率&lt;20% ASIN 分层</h2><div class="grid kpi">
+ <div class="card"><div class="label">总数</div><div class="value orange">179</div><div class="note">Profits&gt;0 且 利润率&lt;20%</div></div>
+ <div class="card"><div class="label">淘汰/清退候选</div><div class="value red">28</div><div class="note">利润率0~5%</div></div>
+ <div class="card"><div class="label">优化观察</div><div class="value orange">61</div><div class="note">利润率5~12%</div></div>
+ <div class="card"><div class="label">继续培养</div><div class="value green">90</div><div class="note">利润率12~20%</div></div>
+ </div></div>
+
+<div class="section card"><h2>重点库存纠偏与风险清单</h2><div class="tablewrap"><div class="zhcx-detail-download-bar" data-zhcx-detail-download="true"><a class="zhcx-detail-download-link" href="data:text/csv;charset=utf-8;base64,77u/QVNJTizorqLljZXliKnmtqbliKTmlq0s5Y6f6ZSZ6K+v5Y+j5b6ELOe6oOato+WQjkZCQeW6k+WtmCzpooTnlZkv5YWl5bqTLExpc3RpbmcgVjLooaXlhYUs5Yqo5L2cDQpCMEcxNThTRlg4LOWIqea2pi0zNzPvvIzliKnmtqbnjoctODIuMzMlLExpc3RpbmcgcXVhbGl0eeWKoOaAuzIxNe+8iOmUmeivr++8iSwyNO+8iOS4u01TS1UgMzVIM1JXUjMwNEFHOEgxNFjvvIznvo7lm73ku5PvvIks6aKE55WZMCAvIOWFpeW6kzAsTGlzdGluZyBWMuS4u01TS1UgcXVhbGl0eT0yN++8jEJ1eUJveOacquefpe+8jOWPpuaciUZCTS/lhbPogZTorrDlvZUxODflkowx5p2hLOWBnOW5v+WRiuOAgeaOp+a4heW6kw0KQjBDRlZUV1Q3MyzliKnmtqYtMjYz77yM5Yip5ram546HLTE0OS40NyUsTGlzdGluZyBxdWFsaXR55Yqg5oC7MjQy77yI6ZSZ6K+v77yJLDQx77yI5Li7TVNLVSAwMTUzMTNXSVBDSjlXMTJaSTZOUO+8jOe+juWbveS7k++8iSzpooTnlZk2IC8g5YWl5bqTMO+8m+WQiOiuoTQ3LExpc3RpbmcgVjLkuLtNU0tVIHF1YWxpdHk9NDLjgIHovazov5Ax44CB5aSE55CG5LitNeOAgU93biBCdXlCb3jvvJvlj6bmnIlGQk3orrDlvZUyMDDkuI3orqHlhaVGQkHlj6/llK4s5p+l6YCA5qy+77yM5pqC5YGc5paw5aKe5oqV5YWlDQpCMEYzMlFTWUc4LOS9juWIqTAuMzclLExpc3RpbmcgVjLmmL7npLrlupPlrZg0MDAs6ZyARkJB5bqT5a2Y6L+b5LiA5q2l57K+56Gu5aSN5qC4LC0sT3duL05vL+acquefpUJ1eUJveOa3t+WQiO+8m+W5v+WRii03MDnjgIHpgIDmrL4tMzc2LOa4hemAgOWAmemAiQ0KQjBEV1BXVkRaTCwi6L275LqPLTE1Ne+8jOmUgOWUruminTMsODIwIixMaXN0aW5nIFYy5bqT5a2YMTUxLOmcgEZCQeW6k+WtmOi/m+S4gOatpeeyvuehruWkjeaguCwtLOmDqOWIhk93biBCdXlCb3jvvIzkuLtMaXN0aW5n5Y+v5ZSu5aSp5pWwNeWkqSzlhYjosIPku7fmjqflub/lkYrvvIzkuI3nm7TmjqXnoI0=" download="杨小琪亚马逊利润与Listing_V2综合经营看板（2026.7.1-7.21）_表格_1_20260721154935.csv" title="下载明细 CSV" role="button" aria-label="下载明细 CSV">
+<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+  <path d="M7 10l5 5 5-5"></path>
+  <path d="M12 15V3"></path>
+</svg></a></div><table><thead><tr><th>ASIN</th><th>订单利润判断</th><th>原错误口径</th><th>纠正后FBA库存</th><th>预留/入库</th><th>Listing V2补充</th><th>动作</th></tr></thead><tbody>
+<tr><td>B0G158SFX8</td><td class="red">利润-373，利润率-82.33%</td><td>Listing quality加总215（错误）</td><td><b>24</b>（主MSKU 35H3RWR304AG8H14X，美国仓）</td><td>预留0 / 入库0</td><td>Listing V2主MSKU quality=27，BuyBox未知，另有FBM/关联记录187和1条</td><td><span class="badge b-red">停广告、控清库</span></td></tr>
+<tr><td>B0CFVTWT73</td><td class="red">利润-263，利润率-149.47%</td><td>Listing quality加总242（错误）</td><td><b>41</b>（主MSKU 015313WIPCJ9W12ZI6NP，美国仓）</td><td>预留6 / 入库0；合计47</td><td>Listing V2主MSKU quality=42、转运1、处理中5、Own BuyBox；另有FBM记录200不计入FBA可售</td><td><span class="badge b-red">查退款，暂停新增投入</span></td></tr>
+<tr><td>B0F32QSYG8</td><td>低利0.37%</td><td>Listing V2显示库存400</td><td>需FBA库存进一步精确复核</td><td>-</td><td>Own/No/未知BuyBox混合；广告-709、退款-376</td><td><span class="badge b-red">清退候选</span></td></tr>
+<tr><td>B0DWPWVDZL</td><td class="red">轻亏-155，销售额3,820</td><td>Listing V2库存151</td><td>需FBA库存进一步精确复核</td><td>-</td><td>部分Own BuyBox，主Listing可售天数5天</td><td><span class="badge b-orange">先调价控广告，不直接砍</span></td></tr>
+</tbody></table></div></div>
+
+<div class="section grid2">
+ <div class="card"><h2>亏损尾部 Top</h2><div class="tablewrap"><div class="zhcx-detail-download-bar" data-zhcx-detail-download="true"><a class="zhcx-detail-download-link" href="data:text/csv;charset=utf-8;base64,77u/QVNJTizplIDllK7pop0s5Yip5ramLOWIqea2pueOhyzmi5bntK/pobkNCkIwRzE1OFNGWDgsNDUzLC0zNzMsLTgyLjMzJSzlub/lkYovRkJBDQpCMENGVlRXVDczLDE3NiwtMjYzLC0xNDkuNDclLOmAgOasvi/lub/lkYoNCkIwRlQ3UE4xTU0sODI0LC0yNTgsLTMxLjM1JSxGQkEv5aS056iLL+W5v+WRig0KQjBGRjlOTUNRViw1ODMsLTI1MCwtNDIuODQlLOmAgOasvi9GQkENCkIwSDFWRzJUWVksIjEsNTE2IiwtMjAxLC0xMy4yOSUs6YCA5qy+L+W5v+WRig==" download="杨小琪亚马逊利润与Listing_V2综合经营看板（2026.7.1-7.21）_表格_2_20260721154935.csv" title="下载明细 CSV" role="button" aria-label="下载明细 CSV">
+<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+  <path d="M7 10l5 5 5-5"></path>
+  <path d="M12 15V3"></path>
+</svg></a></div><table><thead><tr><th>ASIN</th><th>销售额</th><th>利润</th><th>利润率</th><th>拖累项</th></tr></thead><tbody>
+  <tr><td>B0G158SFX8</td><td>453</td><td class="red">-373</td><td class="red">-82.33%</td><td>广告/FBA</td></tr>
+  <tr><td>B0CFVTWT73</td><td>176</td><td class="red">-263</td><td class="red">-149.47%</td><td>退款/广告</td></tr>
+  <tr><td>B0FT7PN1MM</td><td>824</td><td class="red">-258</td><td class="red">-31.35%</td><td>FBA/头程/广告</td></tr>
+  <tr><td>B0FF9NMCQV</td><td>583</td><td class="red">-250</td><td class="red">-42.84%</td><td>退款/FBA</td></tr>
+  <tr><td>B0H1VG2TYY</td><td>1,516</td><td class="red">-201</td><td class="red">-13.29%</td><td>退款/广告</td></tr>
+ </tbody></table></div></div>
+ <div class="card"><h2>重点培养 ASIN</h2><div class="tablewrap"><div class="zhcx-detail-download-bar" data-zhcx-detail-download="true"><a class="zhcx-detail-download-link" href="data:text/csv;charset=utf-8;base64,77u/QVNJTizliKnmtqYs5Yip5ram546HLOWKqOS9nA0KQjBDNjFISkozUiwiMiwxMjciLDQxLjQwJSzkv53liKnmtqbvvIzmoLhCdXlCb3gv5bqT5a2YDQpCMENUMzJKNUpDLCIxLDM3OSIsMzIuNjQlLOeos0J1eUJveO+8jOiwqOaFjuWKoOeggQ0KQjBCS1BZTVhaMywiMSwyNjAiLDUyLjEzJSzkvJjlhYjln7nlhbsNCkIwQ1RINFlWQjQsIjEsMTg2Iiw0OS43MSUs6KGl6LSn5LiO5pS+6YePDQpCMEZTRjVNM0NYLCIxLDEwMCIsNDcuMzglLOWKoOeggeS9huaOp+W6k+WtmA==" download="杨小琪亚马逊利润与Listing_V2综合经营看板（2026.7.1-7.21）_表格_3_20260721154935.csv" title="下载明细 CSV" role="button" aria-label="下载明细 CSV">
+<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+  <path d="M7 10l5 5 5-5"></path>
+  <path d="M12 15V3"></path>
+</svg></a></div><table><thead><tr><th>ASIN</th><th>利润</th><th>利润率</th><th>动作</th></tr></thead><tbody>
+  <tr><td>B0C61HJJ3R</td><td>2,127</td><td class="green">41.40%</td><td>保利润，核BuyBox/库存</td></tr>
+  <tr><td>B0CT32J5JC</td><td>1,379</td><td class="green">32.64%</td><td>稳BuyBox，谨慎加码</td></tr>
+  <tr><td>B0BKPYMXZ3</td><td>1,260</td><td class="green">52.13%</td><td>优先培养</td></tr>
+  <tr><td>B0CTH4YVB4</td><td>1,186</td><td class="green">49.71%</td><td>补货与放量</td></tr>
+  <tr><td>B0FSF5M3CX</td><td>1,100</td><td class="green">47.38%</td><td>加码但控库存</td></tr>
+ </tbody></table></div></div>
+</div>
+
+<div class="section card"><h2>P0/P1/P2 经营动作</h2><div class="grid2">
+ <div><h3><span class="badge b-red">P0 立即止损</span></h3><ul class="list"><li>Amazon-Z011409-US 先控广告与退款。</li><li>B0G158SFX8、B0CFVTWT73：按FBA虚拟库存复核后清理，停止新增投放。</li><li>对利润率&lt;5%的28个ASIN，不再直接培养，除非能明确提价/降本。</li></ul></div>
+ <div><h3><span class="badge b-orange">P1 优化观察</span></h3><ul class="list"><li>5%~12%利润率ASIN：提价、控券、清理低效广告。</li><li>对退款高的B0DTV5CRFN、B0G4LWPFMG等先做退货原因复盘。</li><li>观察1~2周期，仍低于8%转清退。</li></ul></div>
+ <div><h3><span class="badge b-green">P2 培养加码</span></h3><ul class="list"><li>高利润ASIN优先防断货、稳BuyBox。</li><li>广告小步加码，避免用折扣换规模。</li><li>可售天数异常高的高利润款先核库存真实性。</li></ul></div>
+ <div><h3><span class="badge b-blue">口径控制</span></h3><ul class="list"><li>当前FBA库存用 FBA虚拟库存 fulfillable_quantity。</li><li>Listing V2 quality 仅作Listing管理字段，不跨行累加为FBA库存。</li><li>真实销量用订单利润表 ProductNum。</li></ul></div>
+</div></div>
+
+<div class="section card"><h2>数据限制</h2><ul class="list"><li>Listing V2中同ASIN可能存在FBA、FBM、关联导入、历史/删除/不在售、多MSKU记录；库存必须用FBA虚拟库存或限定主MSKU/FBA记录。</li><li>BuyBox空值表示未获取或当前记录无BuyBox信息，不能直接等同无BuyBox。</li><li>本报告未展开广告活动/关键词级别；停投建议基于利润表广告费用拖累，执行前应补广告明细。</li></ul></div>
+<div class="footer">报告生成：2026-07-21。金额单位为报表原始金额；库存纠偏以 FBA虚拟库存工具返回为准。</div>
+</div></body></html>
