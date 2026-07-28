@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E3/E6组夏季相关备货FBA库存与动销分析</title>
+<style>
+:root{--bg:#f6f8fb;--card:#fff;--text:#172033;--muted:#667085;--line:#e6eaf0;--blue:#2563eb;--cyan:#0891b2;--green:#16a34a;--orange:#f97316;--red:#dc2626;--amber:#f59e0b;--purple:#7c3aed;}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;line-height:1.55}.wrap{max-width:1280px;margin:0 auto;padding:28px 22px 48px}.hero{background:linear-gradient(135deg,#eff6ff,#fff 62%,#ecfeff);border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 8px 26px rgba(15,23,42,.06)}h1{font-size:28px;margin:0 0 8px}.sub{color:var(--muted);font-size:14px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 6px 18px rgba(15,23,42,.04);min-width:0}.kpi .label{color:var(--muted);font-size:13px}.kpi .val{font-size:28px;font-weight:760;margin-top:4px}.kpi .note{font-size:12px;color:var(--muted);margin-top:4px}.section{margin-top:22px}.section h2{font-size:20px;margin:0 0 12px}.section h3{font-size:16px;margin:0 0 10px}.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.tablebox{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:#fff}table{border-collapse:collapse;width:100%;min-width:780px}th,td{padding:10px 12px;border-bottom:1px solid var(--line);font-size:13px;text-align:right;white-space:nowrap;vertical-align:top}th{background:#f8fafc;color:#475467;font-weight:700}td:first-child,th:first-child,td:nth-child(2),th:nth-child(2){text-align:left}.wide td{white-space:normal}.wide th{white-space:nowrap}.tag{display:inline-flex;align-items:center;border-radius:999px;padding:3px 9px;font-size:12px;font-weight:700}.tag.red{background:#fef2f2;color:#b91c1c}.tag.orange{background:#fff7ed;color:#c2410c}.tag.green{background:#ecfdf5;color:#047857}.tag.blue{background:#eff6ff;color:#1d4ed8}.barrow{display:grid;grid-template-columns:86px minmax(0,1fr) 78px;gap:10px;align-items:center;margin:10px 0}.bar{height:12px;background:#edf2f7;border-radius:999px;overflow:hidden}.fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),#60a5fa)}.fill.orange{background:linear-gradient(90deg,var(--orange),#fdba74)}.fill.red{background:linear-gradient(90deg,var(--red),#fca5a5)}.metric{font-weight:700;text-align:right}.muted{color:var(--muted)}.note{font-size:13px;color:var(--muted)}.callout{border-left:4px solid var(--blue);background:#eff6ff;padding:12px 14px;border-radius:12px}.warn{border-left-color:var(--orange);background:#fff7ed}.danger{border-left-color:var(--red);background:#fef2f2}.ok{border-left-color:var(--green);background:#ecfdf5}.list{margin:0;padding-left:18px}.list li{margin:6px 0}.pillrow{display:flex;gap:8px;flex-wrap:wrap}.small{font-size:12px}.foot{margin-top:24px;color:var(--muted);font-size:12px}@media (max-width:900px){.grid,.three,.cols,.two{grid-template-columns:1fr}.wrap{padding:18px 12px}.hero{padding:18px}table{min-width:900px}.wide{min-width:980px}.barrow{grid-template-columns:76px minmax(0,1fr) 70px}}
+</style>
+<style id="zhcx-detail-table-export-style">
+.zhcx-detail-download-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+}
+.zhcx-detail-download-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #2563eb;
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+.zhcx-detail-download-link svg {
+  width: 15px;
+  height: 15px;
+}
+.zhcx-detail-download-link:hover,
+.zhcx-detail-download-link:focus {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #1d4ed8;
+  outline: none;
+}
+</style></head>
+<body><div class="wrap">
+<section class="hero">
+<h1>E3/E6组夏季相关备货FBA库存与动销分析</h1>
+<div class="sub">本次已按用户追加要求在同一报告中更新：在原口径基础上新增剔除 <b>Amazon-Z01778-SA</b>。数据范围：库存月表最新月份 <b>2026-07-01</b>；动销主口径为 <b>2026-06-27 至 2026-07-26</b> 发货业绩，近7天趋势为 <b>2026-07-20 至 2026-07-26</b>。筛选：E3/E6组、HolidayLogo含夏季或夏季消费场景标签；FBA有备货 IsStock=1、期末库存 EndQuantity≥1，并排除 EFN/PanEU/NARF。</div>
+<div class="grid">
+<div class="card kpi"><div class="label">FBA期末库存</div><div class="val">8,643</div><div class="note">剔除 Amazon-Z01778-SA 后</div></div>
+<div class="card kpi"><div class="label">Listing / ASIN</div><div class="val">504 / 502</div><div class="note">E3 341/339；E6 163/163</div></div>
+<div class="card kpi"><div class="label">近30天销量</div><div class="val">2,584</div><div class="note">同标签+备货FBA+排除店铺口径</div></div>
+<div class="card kpi"><div class="label">估算可售天数</div><div class="val">≈100天</div><div class="note">EndQuantity ÷ 近30天日均销量</div></div>
+</div>
+</section>
+
+<section class="section cols">
+<div class="card">
+<h2>更新后结论</h2>
+<ul class="list">
+<li><b>剔除影响：</b>Amazon-Z01778-SA 已从本次夏季分析中剔除；剔除后不再出现 SA 市场和李晓萍-SA 的无动销库存风险。</li>
+<li><b>库存结构：</b>E3 6,349件，占73.5%；E6 2,294件，占26.5%。E3仍是绝对库存主盘，E6周转改善但部分市场仍偏慢。</li>
+<li><b>周转：</b>整体近30天销量2,584件，可售约100天；E3约107天，E6约85天。CA/MX/GB动销可承接，US/AU及小市场库存风险更突出。</li>
+<li><b>老库龄：</b>91天以上库存2,745件，占31.8%；181天以上752件，占8.7%。黄子君、陈慧欣、杨小琪和纪人仁是本周老库龄清理主责任人。</li>
+<li><b>本周重点：</b>本周（2026-07-28至2026-08-02）不再以“泛泛观察”为目标，必须完成库存Top款清单、促销/广告动作、待发/在途复核和验收指标追踪。</li>
+</ul>
+</div>
+<div class="card">
+<h2>剔除店铺校验与口径限制</h2>
+<div class="callout"><b>店铺校验：</b>系统中 Amazon-Z01778-SA 对应 Country=SA；本次所有正式结果均在库存和动销条件中加入 <b>l.OrderSourceName &lt;&gt; 'Amazon-Z01778-SA'</b>。</div>
+<p class="note">口径仍沿用上一版：HolidayLogo字段注释为“节日标识：节日标签&amp;产品标签”，本次以该字段筛选夏季、节日与夏季消费场景标签。库存表返回的数据权限按当前用户 Admin62193 的 BusinessAdminID 人员范围过滤。</p>
+<p class="note">动销与库存来自不同事实表，且查询工具单次最多关联1张表；可售天数为按人员/市场聚合后的经营判断口径，不代表逐MSKU精确断货日。</p>
+</div>
+</section>
+
+<section class="section three">
+<div class="card"><h3>团队库存结构</h3>
+<div class="barrow"><div>E3组</div><div class="bar"><div class="fill" style="width:73.5%"></div></div><div class="metric">6,349</div></div>
+<div class="barrow"><div>E6组</div><div class="bar"><div class="fill orange" style="width:26.5%"></div></div><div class="metric">2,294</div></div>
+<p class="note">剔除SA后，E6库存显著下降，风险转向AU/AE/DE等慢周转市场。</p></div>
+<div class="card"><h3>库龄结构</h3>
+<div class="barrow"><div>91天+</div><div class="bar"><div class="fill orange" style="width:31.8%"></div></div><div class="metric">2,745</div></div>
+<div class="barrow"><div>181天+</div><div class="bar"><div class="fill red" style="width:8.7%"></div></div><div class="metric">752</div></div>
+<p class="note">91天+库存仍偏高，是本周清库动作的核心筛选条件。</p></div>
+<div class="card"><h3>在途/待发</h3>
+<div class="barrow"><div>在途</div><div class="bar"><div class="fill" style="width:82.0%"></div></div><div class="metric">1,630</div></div>
+<div class="barrow"><div>待发</div><div class="bar"><div class="fill orange" style="width:18.0%"></div></div><div class="metric">358</div></div>
+<p class="note">MX、CA仍有待发/在途压力，本周必须复核是否拦截慢动销款。</p></div>
+</section>
+
+<section class="section">
+<h2>人员维度：更新后库存、动销与本周动作</h2>
+<div class="tablebox"><div class="zhcx-detail-download-bar" data-zhcx-detail-download="true"><a class="zhcx-detail-download-link" href="data:text/csv;charset=utf-8;base64,77u/5Lq65ZGYLOe7hOWIqyzmnJ/mnKvlupPlrZgs6L+RMzDlpKnplIDph48s5Y+v5ZSu5aSp5pWwLDkx5aSpKyzlupPlrZgv5Yqo6ZSA5Yik5patDQrpu4TlrZDlkJssRTMsIjIsNjY3Iiw2MjYs4omIMTI45aSpLCIxLDA0NCIs5bqT5a2Y5pyA5aSnK+iAgeW6k+m+hOacgOmrmCBVUy9NWC9HQi9BVeWdh+mcgOa4heeQhu+8jFVT5bqT5a2Y5Y+v5ZSu5YGP6auY44CCDQrmnajlsI/nkKosRTMsIjEsOTUwIiw0OTUs4omIMTE45aSpLDUwNixDQeW6k+WtmOWkpyBDQeWKqOmUgOi+g+WlveS9huW6k+WtmFRvcOasvumbhuS4re+8jFVTL0FV6ZyA5o6n6KGl6LSn44CCDQrpmYjmhafmrKMsRTYsIjEsODgwIiw2Nzgs4omIODPlpKksNzE1LOWKqOmUgOWPr+aJv+aOpeS9huiAgeW6k+m+hOmrmCBNWC9DQeWPr+aOqO+8jEFVL0FF6KaB5riF44CCDQrkvZ/nq4vpm6gsRTMsIjEsMDU3Iiw1NTcs4omINTflpKksMjI2LOebuOWvueWBpeW6tyBDQS9VU+WKqOmUgOWlve+8jOWPqumcgOaOp0FV5oWi5Yqo6ZSA44CCDQrnuqrkurrku4EsRTMsNjc1LDk4LOKJiDIwN+WkqSwyMTcs5oWi5ZGo6L2sIEdC5Li65Li777yM5bqT5a2Y6Jm95LiN5pyA5aSn5L2G5ZGo6L2s5pyA5oWi5LmL5LiA44CCDQrmsZ/lpZUsRTYsNDE0LDEzMCziiYg5NuWkqSwzNyzlsI/nm5jkvJjljJYgRlLov5E35aSp5Yqo6ZSA5aW977ybQVUvREUvRVPpnIDkvY7miJDmnKzmuIXnkIbjgII=" download="E3_E6组夏季相关备货FBA库存与动销分析_表格_1_20260728095623.csv" title="下载明细 CSV" role="button" aria-label="下载明细 CSV">
+<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+  <path d="M7 10l5 5 5-5"></path>
+  <path d="M12 15V3"></path>
+</svg></a></div><table><thead><tr><th>人员</th><th>组别</th><th>期末库存</th><th>近30天销量</th><th>可售天数</th><th>91天+</th><th>库存/动销判断</th></tr></thead><tbody>
+<tr><td>黄子君</td><td>E3</td><td>2,667</td><td>626</td><td>≈128天</td><td>1,044</td><td><span class="tag red">库存最大+老库龄最高</span> US/MX/GB/AU均需清理，US库存可售偏高。</td></tr>
+<tr><td>杨小琪</td><td>E3</td><td>1,950</td><td>495</td><td>≈118天</td><td>506</td><td><span class="tag orange">CA库存大</span> CA动销较好但库存Top款集中，US/AU需控补货。</td></tr>
+<tr><td>陈慧欣</td><td>E6</td><td>1,880</td><td>678</td><td>≈83天</td><td>715</td><td><span class="tag orange">动销可承接但老库龄高</span> MX/CA可推，AU/AE要清。</td></tr>
+<tr><td>佟立雨</td><td>E3</td><td>1,057</td><td>557</td><td>≈57天</td><td>226</td><td><span class="tag green">相对健康</span> CA/US动销好，只需控AU慢动销。</td></tr>
+<tr><td>纪人仁</td><td>E3</td><td>675</td><td>98</td><td>≈207天</td><td>217</td><td><span class="tag red">慢周转</span> GB为主，库存虽不最大但周转最慢之一。</td></tr>
+<tr><td>江奕</td><td>E6</td><td>414</td><td>130</td><td>≈96天</td><td>37</td><td><span class="tag blue">小盘优化</span> FR近7天动销好；AU/DE/ES需低成本清理。</td></tr>
+</tbody></table></div>
+</section>
+
+<section class="section">
+<h2>本周必须落地动作（按人员）</h2>
+<div class="tablebox"><div class="zhcx-detail-download-bar" data-zhcx-detail-download="true"><a class="zhcx-detail-download-link" href="data:text/csv;charset=utf-8;base64,77u/5Lq65ZGYLOWRqOS6jC3lkajkuInlrozmiJAs5ZGo5ZubLeWRqOS6lOS4iue6vyzlkajmnKvpqozmlLbmjIfmoIcNCum7hOWtkOWQm+W6k+WtmDI2NjfvvIw5MeWkqSsxMDQ0LOetm+WHuuacrOS6uiBVUy9NWC9HQiDkuK3lupPlrZjiiaUyNeS4lDkx5aSpK+W6k+WtmD4w55qETVNLVe+8m+iHs+WwkeimhuebluW6k+WtmFRvcCAzMOOAguWvuVVT55qEIFlMVzE3NDYxMVZLMlUxMU0x44CBMTEwNDI2UUhMQjNHSkYg562J5bqT5a2YVG9w5qy+5aSN5qC45Lu35qC844CBQnV5IEJveOOAgeS4u+WbvuWSjGNvdXBvbueKtuaAgeOAgizlr7k5MeWkqSvljaDmr5TiiaU3MCXnmoTmrL7orr7nva7muIXlupPmipjmiaPmiJZjb3Vwb27vvJvlr7nov5E35aSp6ZSA6YeP5Li6MOS4lOW6k+WtmOKJpTI155qE5qy+6ZmN5Lu35rWL6K+V44CCTVjmnInlnKjpgJQv5b6F5Y+R55qE5qy+5YWI5pqC5YGc5paw5aKe6KGl6LSn5a6h5om544CCLFRvcCAzMOa4heWNlTEwMCXlrozmiJDliqjkvZzorrDlvZXvvJtVUy9NWOWQiOiuoTflpKnplIDph4/ovoPkuIrlkajmj5DljYfiiaUxNSXvvIzmiJboh7PlsJHmuIXlh7rlupPlrZjiiaU4MOS7tu+8mzkx5aSpK+W6k+WtmOasvuW5v+WRiuWPquS/neeVmeacieiuouWNleivjeOAgg0K5p2o5bCP55Cq5bqT5a2YMTk1MO+8jDkx5aSpKzUwNixDQeW6k+WtmFRvcCAyMOmAkOadoeWIhuWxgu+8muacieWKqOmUgOasvue7tOaMgeW5v+WRiu+8jOW6k+WtmOKJpTUw5LiUOTHlpKkrPjDnmoTmi43nhafpgZPlhbcv5aSP5a2j5qy+5YiX5riF5LuT44CC6YeN54K55qOA5p+lIFFNRTA3UEQxMTQzN0VCUTg2UuOAgVA5OTE0MjUwOFRIQUJaU0tE44CBOUMxNjUxMTZITkhGNlEzReOAgixDQeS4u+aOqOasvuW8gDflpKljb3Vwb27miJZEZWFs5o+Q5oql77ybUDk5MTQyNTA4VEhBQlpTS0Qg6L+Z57G76ICB5bqT6b6E5ouN54Wn6YGT5YW355u05o6l6L+b5YWl5riF5bqT5bm/5ZGK57uE44CCQVXlpI/lraPmoIfnrb7mrL7mnKzlkajmmoLlgZzooaXotKfjgIIsQ0HlupPlrZhUb3AgMjDkuK3oh7PlsJExNeS4quWujOaIkOS/g+mUgC/lub/lkYrliqjkvZzvvJvlupPlrZjiiaU1MOasvuWRqOmUgOmHj+i+vuWIsOKJpeW6k+WtmOeahDUl77yM5ZCm5YiZ5LiL5ZGo57un57ut5Yqg5rex5oqY5omj44CCDQrpmYjmhafmrKPlupPlrZgxODgw77yMOTHlpKkrNzE1LE1Y5bqT5a2YNDkx5L2G5Zyo6YCUMzk144CB5b6F5Y+RNTnvvIzlkajkuInliY3lrozmiJDlnKjpgJQv5b6F5Y+R5aSN5qC477yb5bqT5a2Y4omlMzDkuJQ5MeWkqSs+MOeahOasvuWIl+S4uuaLpuaIquaIlua4heW6k+S8mOWFiOOAgkFVL0FF6YCQ5p2h5YiX5Ye65bqT5a2Y4omlMjXmuIXljZXjgIIsTVjkv53nlZnov5EzMOWkqeaciemUgOmHj+asvuW5v+WRiu+8jOS9juWKqOmUgOS4lOiAgeW6k+m+hOasvumZjemihOeul++8m0FVL0FF5LiK5p625riF5bqTY291cG9u5oiW6ZmN5Lu377yMQUXov5EzMOWkqeS7hTHku7bplIDph4/nmoTmrL7kuI3lho3ooaXotKfjgIIsTVjlvoXlj5E1OeS7tue7meWHuuKAnOS/neeVmS/lj5bmtogv6L2s56e74oCd57uT5p6c77ybQVUvQUXlupPlrZjiiaUyNeasvjEwMCXlrozmiJDmuIXlupPliqjkvZzvvJtNWOi/kTflpKnplIDph4/nu7TmjIHiiaUyNuS7tuOAgg0K5L2f56uL6Zuo5bqT5a2YMTA1N++8jOi/kTMw5aSpNTU3LENBL1VT5Yqo6ZSA5aW977yM5ZGo5LiJ5YmN6K+G5Yir6L+RMzDlpKnplIDph49Ub3AgMjDkuJTlj6/llK48NjDlpKnmrL7vvIznoa7kv53kuI3mlq3otKfvvJtBVeW6k+WtmDMw5Lu25Lul5LiK5aSP5a2jL+avleS4muWto+asvuWNleeLrOWIl+WFpemdnuaXuuWto+a4heeQhuOAgixDQS9VU+WPquihpei/kTMw5aSp6ZSA6YePVG9w5qy+77ybQVXkuI3mlrDlop7ljJfljYrnkIPlpI/lraPpgLvovpHlpIfotKfvvIzph4fnlKjkvY7pooTnrpfkv53nlZnlub/lkYrmiJblsI/pop1jb3Vwb27muIXlupPlrZjjgIIsQ0EvVVPkuLvmjqjmrL7kuI3mlq3otKfpo47pmanmuIXljZXlrozmiJDvvJtBVeW6k+WtmOKJpTI15qy+6Iez5bCR5a6M5oiQ5Lu35qC85oiWY291cG9u5Yqo5L2c77yM6YG/5YWN57un57ut5rKJ5reA44CCDQrnuqrkurrku4HlupPlrZg2NzXvvIzov5EzMOWkqTk4LEdC5Li65qC45b+D77ya562b5bqT5a2Y4omlMjXkuJTov5E35aSp6ZSA6YeP4omkMueahE1TS1XvvJvmi43nhafpgZPlhbfjgIHlqZrnpLzoo4XppbDjgIHmr5XkuJrlraPliIbkuInnsbvvvIzpgJDmnaHmo4Dmn6XmoIfpopjlhbPplK7or43jgIHku7fmoLzlkoxjb3Vwb27jgIIsR0LmhaLliqjplIDmrL7nu5/kuIDov5vlhaXmuIXlupPlub/lkYrnu4TvvJvlupPlrZjiiaUzMOS4lDkx5aSpKz4w55qE5qy+6K6+572u5pu06auY5oqY5omj77ybREUvRlLlsI/lupPlrZjlj6rlgZroh6rnhLbmtYHph4/op4Llr5/vvIzkuI3ooaXotKfjgIIsR0LlupPlrZjiiaUyNeasvjEwMCXlrozmiJDmo4Dmn6XvvJvov5E35aSp6ZSA6YeP5LuON+S7tuaPkOWNh+WIsOKJpTEy5Lu277yM5oiW5bqT5a2YVG9w5oWi5Yqo6ZSA5qy+5YWo6YOo5a6M5oiQ6ZmN5Lu3L2NvdXBvbuOAgg0K5rGf5aWV5bqT5a2YNDE077yM6L+RMzDlpKkxMzAsRlLov5E35aSpMjbku7booajnjrDlpb3vvIzkv53nlZnpooTnrpfvvJtBVS9ERS9FU+etm+W6k+WtmOKJpTIw5LiU6L+RN+WkqeKJpDLku7bnmoTmrL7jgILmo4Dmn6VBVeWpmuekvOijhemlsOWTgeasviBQMTUzMzA2NkRUWEhaVkjjgIIsRlLkv53mjIHmipXmlL7vvJtBVS9ERS9FU+eUqOS9jumihOeul+eyvuWHhuivjSvlsI/pop1jb3Vwb27muIXlupPlrZjvvIxFU+aXoOi/kTflpKnliqjplIDnmoTmrL7mmoLlgZzooaXotKflkozlub/lkYrmianph4/jgIIsRlLkuI3mlq3otKfvvJtBVS9ERS9FU+W6k+WtmOKJpTIw5oWi5Yqo6ZSA5qy+5YWo6YOo5a6M5oiQ5aSE55CG77yM5ZGo5pyr5aSN55uY5piv5ZCm6Iez5bCR5Lqn55Sf6K6i5Y2V44CC" download="E3_E6组夏季相关备货FBA库存与动销分析_表格_2_20260728095623.csv" title="下载明细 CSV" role="button" aria-label="下载明细 CSV">
+<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+  <path d="M7 10l5 5 5-5"></path>
+  <path d="M12 15V3"></path>
+</svg></a></div><table class="wide"><thead><tr><th>人员</th><th>周二-周三完成</th><th>周四-周五上线</th><th>周末验收指标</th></tr></thead><tbody>
+<tr><td><b>黄子君</b><br><span class="small muted">库存2667，91天+1044</span></td><td>筛出本人 <b>US/MX/GB</b> 中库存≥25且91天+库存&gt;0的MSKU；至少覆盖库存Top 30。对US的 YLW174611VK2U11M1、110426QHLB3GJF 等库存Top款复核价格、Buy Box、主图和coupon状态。</td><td>对91天+占比≥70%的款设置清库折扣或coupon；对近7天销量为0且库存≥25的款降价测试。MX有在途/待发的款先暂停新增补货审批。</td><td>Top 30清单100%完成动作记录；US/MX合计7天销量较上周提升≥15%，或至少清出库存≥80件；91天+库存款广告只保留有订单词。</td></tr>
+<tr><td><b>杨小琪</b><br><span class="small muted">库存1950，91天+506</span></td><td>CA库存Top 20逐条分层：有动销款维持广告，库存≥50且91天+&gt;0的拍照道具/夏季款列清仓。重点检查 QME07PD11437EBQ86R、P99142508THABZSKD、9C165116HNHF6Q3E。</td><td>CA主推款开7天coupon或Deal提报；P99142508THABZSKD 这类老库龄拍照道具直接进入清库广告组。AU夏季标签款本周暂停补货。</td><td>CA库存Top 20中至少15个完成促销/广告动作；库存≥50款周销量达到≥库存的5%，否则下周继续加深折扣。</td></tr>
+<tr><td><b>陈慧欣</b><br><span class="small muted">库存1880，91天+715</span></td><td>MX库存491但在途395、待发59，周三前完成在途/待发复核；库存≥30且91天+&gt;0的款列为拦截或清库优先。AU/AE逐条列出库存≥25清单。</td><td>MX保留近30天有销量款广告，低动销且老库龄款降预算；AU/AE上架清库coupon或降价，AE近30天仅1件销量的款不再补货。</td><td>MX待发59件给出“保留/取消/转移”结果；AU/AE库存≥25款100%完成清库动作；MX近7天销量维持≥26件。</td></tr>
+<tr><td><b>佟立雨</b><br><span class="small muted">库存1057，近30天557</span></td><td>CA/US动销好，周三前识别近30天销量Top 20且可售&lt;60天款，确保不断货；AU库存30件以上夏季/毕业季款单独列入非旺季清理。</td><td>CA/US只补近30天销量Top款；AU不新增北半球夏季逻辑备货，采用低预算保留广告或小额coupon清库存。</td><td>CA/US主推款不断货风险清单完成；AU库存≥25款至少完成价格或coupon动作，避免继续沉淀。</td></tr>
+<tr><td><b>纪人仁</b><br><span class="small muted">库存675，近30天98</span></td><td>GB为核心：筛库存≥25且近7天销量≤2的MSKU；拍照道具、婚礼装饰、毕业季分三类，逐条检查标题关键词、价格和coupon。</td><td>GB慢动销款统一进入清库广告组；库存≥30且91天+&gt;0的款设置更高折扣；DE/FR小库存只做自然流量观察，不补货。</td><td>GB库存≥25款100%完成检查；近7天销量从7件提升到≥12件，或库存Top慢动销款全部完成降价/coupon。</td></tr>
+<tr><td><b>江奕</b><br><span class="small muted">库存414，近30天130</span></td><td>FR近7天26件表现好，保留预算；AU/DE/ES筛库存≥20且近7天≤2件的款。检查AU婚礼装饰品款 P1533066DTXHZVH。</td><td>FR保持投放；AU/DE/ES用低预算精准词+小额coupon清库存，ES无近7天动销的款暂停补货和广告扩量。</td><td>FR不断货；AU/DE/ES库存≥20慢动销款全部完成处理，周末复盘是否至少产生订单。</td></tr>
+</tbody></table></div>
+</section>
+
+<section class="section">
+<h2>市场维度：剔除SA后的库存与周转</h2>
+<div class="tablebox"><div class="zhcx-detail-download-bar" data-zhcx-detail-download="true"><a class="zhcx-detail-download-link" href="data:text/csv;charset=utf-8;base64,77u/57uE5YirLOW4guWcuixMaXN0aW5nLOacn+acq+W6k+WtmCzov5EzMOWkqemUgOmHjyzlj6/llK7lpKnmlbAsOTHlpKkr5Y2g5q+ULOacrOWRqOW4guWcuuWKqOS9nA0KRTMsVVMsMTI0LCIyLDE5MiIsNDQxLOKJiDE0OeWkqSwzMy4yJSzljovlupPlrZgg5aSP5a2j5bC+5q6177yM5bqT5a2YVG9w5qy+5L+D6ZSAK+W5v+WRiuaJv+aOpeOAgg0KRTMsQ0EsOTIsIjIsMDAyIiw4MjAs4omINzPlpKksMjUuNCUs5Li75o6o5raI5YyWIOWPr+e7p+e7reaOqO+8jOS9huWPquihpeWKqOmUgFRvcOasvuOAgg0KRTMsR0IsNDgsODEwLDIwMiziiYgxMjDlpKksMzEuOSUs5riF5oWi5Yqo6ZSAIOWpmuekvC/mtL7lr7kv5ouN54Wn6YGT5YW357uE5ZCI5L+D6ZSA44CCDQpFMyxNWCw0MSw3OTIsMTk1LOKJiDEyMuWkqSw0My43JSzmjqflnKjpgJQg5YWI5riFOTHlpKkr77yM5Zyo6YCUMjE35LiN5YaN5omp44CCDQpFMyxBVSwzMSw0NjIsMTE4LOKJiDExN+WkqSwzMi45JSzlraPoioLplJnphY0g5b2T5YmN5Y2X5Y2K55CD5Yas5a2j77yM5LiN5oyJ5aSP5a2j6KGl6LSn44CCDQpFNixDQSw1MSw3MDAsMzA0LOKJiDY55aSpLDI5LjclLOaJv+aOpeWKqOmUgCDlvoXlj5E5MOS7heS/neeVmeW/q+WKqOmUgOasvuOAgg0KRTYsTVgsMjAsNDkxLDIxMSziiYg3MOWkqSw0Mi4yJSzmi6bmiKrlvoXlj5Eg5Zyo6YCUMzk177yM5b+F6aG75ZGo5YaF5aSN5qC444CCDQpFNixVUywzNCwzNTgsOTMs4omIMTE15aSpLDM2LjklLOa4heiAgeW6k+m+hCDlpI/lraPmrL7ov5vlhaXlsL7mrrXkv4PplIDjgIINCkU2LEFVLDIyLDMwOSw0NSziiYgyMDblpKksNDcuOSUs6auY5rue6ZSAIOS4jeihpei0p++8jOS9jumihOeul+a4heS7k+OAgg0KRTYsR0IsMjMsMjUwLDExMSziiYg2OOWkqSw2LjglLOebuOWvueWBpeW6tyDnu6fnu63mib/mjqXlqZrnpLwv5rS+5a+55Zy65pmv44CCDQpFNixBRSwyLDU0LDEs4omIMTYyMOWkqSw2My4wJSznq4vljbPmuIXnkIYg5bCP55uY5L2G5p6B5oWi5Yqo6ZSA77yM6ZmN5Lu35oiW56e76Zmk5bqT5a2Y44CCDQpFNixERSwyLDIwLDMs4omIMjAw5aSpLDAuMCUs5LiN6KGl6LSnIOS9juaIkOacrOmqjOivgei9rOWMluOAgg==" download="E3_E6组夏季相关备货FBA库存与动销分析_表格_3_20260728095623.csv" title="下载明细 CSV" role="button" aria-label="下载明细 CSV">
+<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+  <path d="M7 10l5 5 5-5"></path>
+  <path d="M12 15V3"></path>
+</svg></a></div><table><thead><tr><th>组别</th><th>市场</th><th>Listing</th><th>期末库存</th><th>近30天销量</th><th>可售天数</th><th>91天+占比</th><th>本周市场动作</th></tr></thead><tbody>
+<tr><td>E3</td><td>US</td><td>124</td><td>2,192</td><td>441</td><td>≈149天</td><td>33.2%</td><td><span class="tag red">压库存</span> 夏季尾段，库存Top款促销+广告承接。</td></tr>
+<tr><td>E3</td><td>CA</td><td>92</td><td>2,002</td><td>820</td><td>≈73天</td><td>25.4%</td><td><span class="tag green">主推消化</span> 可继续推，但只补动销Top款。</td></tr>
+<tr><td>E3</td><td>GB</td><td>48</td><td>810</td><td>202</td><td>≈120天</td><td>31.9%</td><td><span class="tag orange">清慢动销</span> 婚礼/派对/拍照道具组合促销。</td></tr>
+<tr><td>E3</td><td>MX</td><td>41</td><td>792</td><td>195</td><td>≈122天</td><td>43.7%</td><td><span class="tag orange">控在途</span> 先清91天+，在途217不再扩。</td></tr>
+<tr><td>E3</td><td>AU</td><td>31</td><td>462</td><td>118</td><td>≈117天</td><td>32.9%</td><td><span class="tag orange">季节错配</span> 当前南半球冬季，不按夏季补货。</td></tr>
+<tr><td>E6</td><td>CA</td><td>51</td><td>700</td><td>304</td><td>≈69天</td><td>29.7%</td><td><span class="tag green">承接动销</span> 待发90仅保留快动销款。</td></tr>
+<tr><td>E6</td><td>MX</td><td>20</td><td>491</td><td>211</td><td>≈70天</td><td>42.2%</td><td><span class="tag orange">拦截待发</span> 在途395，必须周内复核。</td></tr>
+<tr><td>E6</td><td>US</td><td>34</td><td>358</td><td>93</td><td>≈115天</td><td>36.9%</td><td><span class="tag orange">清老库龄</span> 夏季款进入尾段促销。</td></tr>
+<tr><td>E6</td><td>AU</td><td>22</td><td>309</td><td>45</td><td>≈206天</td><td>47.9%</td><td><span class="tag red">高滞销</span> 不补货，低预算清仓。</td></tr>
+<tr><td>E6</td><td>GB</td><td>23</td><td>250</td><td>111</td><td>≈68天</td><td>6.8%</td><td><span class="tag green">相对健康</span> 继续承接婚礼/派对场景。</td></tr>
+<tr><td>E6</td><td>AE</td><td>2</td><td>54</td><td>1</td><td>≈1620天</td><td>63.0%</td><td><span class="tag red">立即清理</span> 小盘但极慢动销，降价或移除库存。</td></tr>
+<tr><td>E6</td><td>DE</td><td>2</td><td>20</td><td>3</td><td>≈200天</td><td>0.0%</td><td><span class="tag orange">不补货</span> 低成本验证转化。</td></tr>
+</tbody></table></div>
+</section>
+
+<section class="section cols">
+<div class="card">
+<h2>库存Top风险清单</h2>
+<div class="tablebox"><div class="zhcx-detail-download-bar" data-zhcx-detail-download="true"><a class="zhcx-detail-download-link" href="data:text/csv;charset=utf-8;base64,77u/5Lq65ZGYLOW4guWcuizlupfpk7osTVNLVSxBU0lOLOagh+etvizlupPlrZgsOTHlpKkrDQrmnajlsI/nkKosQ0EsQW1hem9uLVowMTY3Ny1DQSxRTUUwN1BEMTE0MzdFQlE4NlIsQjBENUhQUFhUOCzlpI/lraMsMjA2LDANCumZiOaFp+asoyxNWCxBbWF6b24tWjAxMDE3LU1YLDBVUFNSTVY5NUY1UDMyMDIxMzBSTk9KUkcsQjBDUjc2Q0tEMyzlhL/nq6XoioIsMTQ4LDE0OA0K6buE5a2Q5ZCbLFVTLEFtYXpvbi1aMDE2NDgtVVMsWUxXMTc0NjExVksyVTExTTEsQjBEMjJOODRQSCzlpI/lraMsMTMyLDANCuadqOWwj+eQqixDQSxBbWF6b24tWjAxNjc3LUNBLFA5OTE0MjUwOFRIQUJaU0tELEIwRk5YOFNKVjYs5ouN54Wn6YGT5YW3LDgwLDgxDQrmnajlsI/nkKosQ0EsQW1hem9uLVowMTE0MDktQ0EsOUMxNjUxMTZITkhGNlEzRSxCMEZCR1kyQjVLLOaLjeeFp+mBk+WFtyw3OSwwDQrpu4TlrZDlkJssVVMsQW1hem9uLVowMTIyOS1VUywxMTA0MjZRSExCM0dKRixCMEZNRFNaOVc1LOaXpeacrOa4uOWxseaXpSw3Niw3NQ==" download="E3_E6组夏季相关备货FBA库存与动销分析_表格_4_20260728095623.csv" title="下载明细 CSV" role="button" aria-label="下载明细 CSV">
+<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+  <path d="M7 10l5 5 5-5"></path>
+  <path d="M12 15V3"></path>
+</svg></a></div><table><thead><tr><th>人员</th><th>市场</th><th>店铺</th><th>MSKU</th><th>ASIN</th><th>标签</th><th>库存</th><th>91天+</th></tr></thead><tbody>
+<tr><td>杨小琪</td><td>CA</td><td>Amazon-Z01677-CA</td><td>QME07PD11437EBQ86R</td><td>B0D5HPPXT8</td><td>夏季</td><td>206</td><td>0</td></tr>
+<tr><td>陈慧欣</td><td>MX</td><td>Amazon-Z01017-MX</td><td>0UPSRMV95F5P3202130RNOJRG</td><td>B0CR76CKD3</td><td>儿童节</td><td>148</td><td>148</td></tr>
+<tr><td>黄子君</td><td>US</td><td>Amazon-Z01648-US</td><td>YLW174611VK2U11M1</td><td>B0D22N84PH</td><td>夏季</td><td>132</td><td>0</td></tr>
+<tr><td>杨小琪</td><td>CA</td><td>Amazon-Z01677-CA</td><td>P99142508THABZSKD</td><td>B0FNX8SJV6</td><td>拍照道具</td><td>80</td><td>81</td></tr>
+<tr><td>杨小琪</td><td>CA</td><td>Amazon-Z011409-CA</td><td>9C165116HNHF6Q3E</td><td>B0FBGY2B5K</td><td>拍照道具</td><td>79</td><td>0</td></tr>
+<tr><td>黄子君</td><td>US</td><td>Amazon-Z01229-US</td><td>110426QHLB3GJF</td><td>B0FMDSZ9W5</td><td>日本游山日</td><td>76</td><td>75</td></tr>
+</tbody></table></div>
+<p class="note">清单按剔除店铺后的期末库存Top记录展示；本周动作优先覆盖库存≥25和91天+占比高的款。</p>
+</div>
+<div class="card">
+<h2>夏季时长提醒</h2>
+<ul class="list">
+<li><b>US/CA/GB/DE/FR/ES：</b>北半球常规夏季约6-8月，当前7月下旬已进入中后段，本周起策略应从补货转为“促销转化+清老库龄”。</li>
+<li><b>MX：</b>高温消费周期可延续更久，但E3/E6均有明显在途；本周只允许近30天高动销款继续承接，慢动销款拦截。</li>
+<li><b>AE：</b>高温季较长，但本次销量只有1件、库存54件，说明核心问题不是季节长度，而是Listing/价格/流量承接。</li>
+<li><b>AU：</b>南半球夏季通常在12-2月，当前7月是冬季；AU夏季标签库存应转为低预算保留和清仓，不要按北半球节奏追加。</li>
+</ul>
+<p class="note">季节窗口为运营日历提醒；最终动作以近7/30天销量、库存天数、库龄和在途待发为准。</p>
+</div>
+</section>
+
+<section class="section card">
+<h2>计算口径</h2>
+<ul class="list note">
+<li><b>库存口径：</b>zhcxkj_bi_amz_business.t_dwdws_amazon_fba_listing_inventory_monthly，MonthDate='2026-07-01'，EndQuantity≥1。</li>
+<li><b>备货与排除口径：</b>关联 t_dwdwd_amazon_fba_listing，IsStock=1；IsEfn、IsPanEu、IsNarf 均为空或0；新增 l.OrderSourceName &lt;&gt; 'Amazon-Z01778-SA'。</li>
+<li><b>标签口径：</b>HolidayLogo为“节日标识：节日标签&amp;产品标签”；筛选含夏季或夏季消费场景的关键词。</li>
+<li><b>动销口径：</b>t_dwdws_amazon_ordersettlement_msku，ShipDate近30天，DeliveryType='FBA'，GroupProductNum作为销量，ClientOrderCount作为订单量；同步排除 Amazon-Z01778-SA。</li>
+<li><b>可售天数：</b>期末FBA库存 ÷（近30天销量 ÷ 30）。销量为0时标记为无动销；小样本市场如AE/DE需结合单品复核。</li>
+</ul>
+</section>
+<div class="foot">报告已按同一 artifact 更新；数据与结论均基于本轮重新取数后的工具返回结果。</div>
+</div></body></html>
